@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meus Achadinhos | Melhores Ofertas</title>
+  
+  <!-- Fonte Inter do Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons FontAwesome para logotipos e ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Arquivo de Estilos CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- CABEÇALHO / PERFIL -->
+    <header class="profile-header">
+      <div class="avatar-wrapper">
+        <!-- Substitua o link abaixo pela sua foto ou logo -->
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80" alt="Foto de Perfil" class="avatar">
+        <span class="verified-badge"><i class="fa-solid fa-check"></i></span>
+      </div>
+      <h1 class="profile-title">Achadinhos da [Seu Nome]</h1>
+      <p class="profile-bio">As melhores ofertas da Shopee, Mercado Livre e Amazon garimpadas diariamente! 🛒✨</p>
+      
+      <!-- REDES SOCIAIS -->
+      <div class="social-links">
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://whatsapp.com" target="_blank" aria-label="Grupo VIP no WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </header>
+
+    <!-- BARRA DE BUSCA -->
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input type="text" id="searchInput" placeholder="Buscar achadinho ex: escova, organizador..." onkeyup="filterProducts()">
+    </div>
+
+    <!-- FILTROS DE CATEGORIA -->
+    <div class="categories-scroll">
+      <button class="category-btn active" onclick="filterCategory('all', this)">🔥 Todos</button>
+      <button class="category-btn" onclick="filterCategory('cozinha', this)">🍳 Cozinha</button>
+      <button class="category-btn" onclick="filterCategory('tecnologia', this)">🎧 Tech</button>
+      <button class="category-btn" onclick="filterCategory('casa', this)">🏠 Casa & Decor</button>
+      <button class="category-btn" onclick="filterCategory('beleza', this)">💄 Beleza</button>
+    </div>
+
+    <!-- LISTA DE PRODUTOS / CARDS -->
+    <main class="products-grid" id="productsGrid">
+
+      <!-- PRODUTO 1 (Shopee) -->
+      <div class="product-card" data-category="cozinha">
+        <div class="card-image-wrapper">
+          <span class="badge shopee">Shopee</span>
+          <!-- Substitua o src pela foto real do produto -->
+          <img src="https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?w=500&auto=format&fit=crop&q=80" alt="Mini Processador Elétrico">
+        </div>
+        <div class="card-content">
+          <h2 class="product-title">Mini Processador Elétrico de Alimentos Sem Fio</h2>
+          <div class="price-container">
+            <span class="old-price">R$ 59,90</span>
+            <span class="current-price">R$ 29,90</span>
+          </div>
+          <a href="SEU_LINK_DE_AFILIADO_AQUI" target="_blank" rel="noopener noreferrer" class="btn-buy shopee-btn">
+            Ver na Shopee <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUTO 2 (Mercado Livre) -->
+      <div class="product-card" data-category="tecnologia">
+        <div class="card-image-wrapper">
+          <span class="badge mercado-livre">Mercado Livre</span>
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop&q=80" alt="Fone de Ouvido Bluetooth">
+        </div>
+        <div class="card-content">
+          <h2 class="product-title">Fone de Ouvido Bluetooth Sem Fio Dobrável</h2>
+          <div class="price-container">
+            <span class="old-price">R$ 180,00</span>
+            <span class="current-price">R$ 119,90</span>
+          </div>
+          <a href="SEU_LINK_DE_AFILIADO_AQUI" target="_blank" rel="noopener noreferrer" class="btn-buy ml-btn">
+            Ver no Mercado Livre <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUTO 3 (Amazon) -->
+      <div class="product-card" data-category="casa">
+        <div class="card-image-wrapper">
+          <span class="badge amazon">Amazon</span>
+          <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=500&auto=format&fit=crop&q=80" alt="Luminária LED Inteligente">
+        </div>
+        <div class="card-content">
+          <h2 class="product-title">Luminária de Mesa LED Articulada Inteligente</h2>
+          <div class="price-container">
+            <span class="current-price">R$ 89,90</span>
+          </div>
+          <a href="SEU_LINK_DE_AFILIADO_AQUI" target="_blank" rel="noopener noreferrer" class="btn-buy amazon-btn">
+            Ver na Amazon <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- MENSAGEM DE NENHUM PRODUTO ENCONTRADO -->
+    <div id="noResults" class="no-results hidden">
+      <i class="fa-solid fa-magnifying-glass-minus"></i>
+      <p>Nenhum achadinho encontrado para essa busca.</p>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+      <p>© 2026 Achadinhos da [Seu Nome] • Links de Afiliado</p>
+    </footer>
+
+  </div>
+
+  <!-- SCRIPT SIMPLES PARA BUSCA E FILTROS -->
+  <script>
+    function filterProducts() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.product-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const title = card.querySelector('.product-title').innerText.toLowerCase();
+        if (title.includes(input)) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      toggleNoResults(visibleCount);
+    }
+
+    function filterCategory(category, button) {
+      document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      const cards = document.querySelectorAll('.product-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        if (category === 'all' || cardCategory === category) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      toggleNoResults(visibleCount);
+    }
+
+    function toggleNoResults(count) {
+      const noResults = document.getElementById('noResults');
+      if (count === 0) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
