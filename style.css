@@ -143,7 +143,7 @@ body {
 
 /* CATEGORIAS (SCROLL HORIZONTAL) */
 .categories-scroll {
-  display: flex;
+  display: none;
   gap: 8px;
   overflow-x: auto;
   padding-bottom: 12px;
