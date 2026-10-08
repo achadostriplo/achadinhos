@@ -184,8 +184,8 @@ body {
 }
 
 .product-card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
+  background-color: #ffffff (--card-bg);
+  border: 0px solid var(--border-color);
   border-radius: var(--radius);
   overflow: hidden;
   display: flex;
@@ -196,7 +196,7 @@ body {
 
 .product-card:hover {
   transform: translateY(-2px);
-  border-color: #475569;
+  border-color: #ffffff;
 }
 
 .card-image-wrapper {
@@ -204,7 +204,7 @@ body {
   width: 110px;
   min-width: 110px;
   height: 110px;
-  background-color: #000;
+  background-color: #fff;
 }
 
 .card-image-wrapper img {
