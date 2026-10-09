@@ -54,11 +54,11 @@ body {
 }
 
 .avatar {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  border-radius: 30%;
   object-fit: cover;
-  border: 3px solid var(--border-color);
+  border: 1px solid var(--border-color);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
