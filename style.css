@@ -14,14 +14,14 @@
   --amazon-color: #ff9900;
   --amazon-text: #111;
   
-  --radius: 16px;
+  /*--radius: 16px;
   --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
+}*/
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing:0; border-box:0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
